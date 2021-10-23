@@ -249,16 +249,16 @@ public class Main {
         }
 
         /****************************** graph 1 graph ***********************************************/
-        int[] graph1 = new int[3];
-        graph1[0] = users.size();
-        graph1[1] = ids.size();
-        graph1[2] = level_complete;
-
-        JFrame frame=new JFrame("Number of passes for each level");
-        frame.setLayout(new GridLayout(2,2,10,10));
-        frame.add(new BarChart(graph1).getChartPanel());      //添加柱形图
-        frame.setBounds(50, 50, 800, 600);
-        frame.setVisible(true);
+//        int[] graph1 = new int[3];
+//        graph1[0] = users.size();
+//        graph1[1] = ids.size();
+//        graph1[2] = level_complete;
+//
+//        JFrame frame=new JFrame("Number of passes for each level");
+//        frame.setLayout(new GridLayout(2,2,10,10));
+//        frame.add(new BarChart(graph1).getChartPanel());      //添加柱形图
+//        frame.setBounds(50, 50, 800, 600);
+//        frame.setVisible(true);
 
         /****************************** graph 2 graph ***********************************************/
 //        int[] data_start = new int[65];
@@ -370,44 +370,44 @@ public class Main {
 //        frame2.setVisible(true);
 
         /****************************** graph 7 graph ***********************************************/
-//        List<List<String>> tower = new ArrayList<List<String>>();
-//        List<List<Integer>> number = new ArrayList<List<Integer>>();
-//
-//        for(int i = 1; i < listCard.length; i++){
-//            System.out.println("level" + i + "" + listCard[i]);
-//        }
-//
-//        for(int i = 1; i < listCard.length; i++){
-//            List<String> curLayerTower = new ArrayList<String>();
-//            List<Integer> curLayerNumber = new ArrayList<Integer>();
-//            Queue<Map.Entry<String, Integer>> pq = new PriorityQueue<Map.Entry<String, Integer>>(5, new Comparator<Map.Entry<String, Integer>>() {
-//                @Override
-//                public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
-//                    return o1.getValue() - o2.getValue();
-//                }
-//            });
-//            for (Map.Entry<String, Integer> entry : listCard[i].entrySet()) {
-//                pq.add(entry);
-//                if(pq.size() > 5){
-//                    pq.poll();
-//                }
-//            }
-//            while(!pq.isEmpty()){
-//                Map.Entry<String, Integer> tempEntry = pq.poll();
-//                curLayerTower.add(tempEntry.getKey());
-//                curLayerNumber.add(tempEntry.getValue());
-//            }
-//            tower.add(curLayerTower);
-//            number.add(curLayerNumber);
-//        }
-//
-//        System.out.println(number);
-//
-//        JFrame frame2 = new JFrame("Number of passes for each level");
-//        frame2.setLayout(new GridLayout(1,1,1,1));
-//        frame2.add(new BarChart7(tower, number).getChartPanel());      //添加柱形图
-//        frame2.setBounds(50, 50, 1500, 600);
-//        frame2.setVisible(true);
+        List<List<String>> tower = new ArrayList<List<String>>();
+        List<List<Integer>> number = new ArrayList<List<Integer>>();
+
+        for(int i = 1; i < listCard.length; i++){
+            System.out.println("level" + i + "" + listCard[i]);
+        }
+
+        for(int i = 1; i < listCard.length; i++){
+            List<String> curLayerTower = new ArrayList<String>();
+            List<Integer> curLayerNumber = new ArrayList<Integer>();
+            Queue<Map.Entry<String, Integer>> pq = new PriorityQueue<Map.Entry<String, Integer>>(5, new Comparator<Map.Entry<String, Integer>>() {
+                @Override
+                public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+                    return o1.getValue() - o2.getValue();
+                }
+            });
+            for (Map.Entry<String, Integer> entry : listCard[i].entrySet()) {
+                pq.add(entry);
+                if(pq.size() > 5){
+                    pq.poll();
+                }
+            }
+            while(!pq.isEmpty()){
+                Map.Entry<String, Integer> tempEntry = pq.poll();
+                curLayerTower.add(tempEntry.getKey());
+                curLayerNumber.add(tempEntry.getValue());
+            }
+            tower.add(curLayerTower);
+            number.add(curLayerNumber);
+        }
+
+        System.out.println(number);
+
+        JFrame frame2 = new JFrame("Number of passes for each level");
+        frame2.setLayout(new GridLayout(1,1,1,1));
+        frame2.add(new BarChart7(tower, number).getChartPanel());      //添加柱形图
+        frame2.setBounds(50, 50, 1500, 600);
+        frame2.setVisible(true);
 
         /****************************** graph 8 graph ***********************************************/
 //        JFrame frame2 = new JFrame("Reward Collection Rates");
