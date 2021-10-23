@@ -71,10 +71,10 @@ public class Main {
 
 
 
-        File file1 = new File("/Users/xujian/Documents/spurpunk-record/Data1016/part-9f977913-f5e7-416f-a536-55fba0b9e8ac/part-9f977913-f5e7-416f-a536-55fba0b9e8ac");
-        File file2 = new File("/Users/xujian/Documents/spurpunk-record/Data1016/part-a384a720-c537-4758-ad45-a2d4e30da30e/part-a384a720-c537-4758-ad45-a2d4e30da30e");
-        File file3 = new File("/Users/xujian/Documents/spurpunk-record/Data1016/part-ecb79ef5-2b15-4904-81c8-da1fc4aba7cc/part-ecb79ef5-2b15-4904-81c8-da1fc4aba7cc");
-        File file4 = new File("/Users/xujian/Documents/spurpunk-record/Data1016/part-f13f2fc4-9d35-42c4-8ec2-ca8d6ab3dc57/part-f13f2fc4-9d35-42c4-8ec2-ca8d6ab3dc57");
+        File file1 = new File("/Users/xujian/Documents/spurpunk-record/Data10/part-4db6471b-699f-4652-b1b3-b6643e29f4a1/part-4db6471b-699f-4652-b1b3-b6643e29f4a1");
+        File file2 = new File("/Users/xujian/Documents/spurpunk-record/Data10/part-9070a782-f05d-4d41-b2e6-82a1ea049cff/part-9070a782-f05d-4d41-b2e6-82a1ea049cff");
+        File file3 = new File("/Users/xujian/Documents/spurpunk-record/Data10/part-9113615d-e22e-4940-9166-712f5e1c4767/part-9113615d-e22e-4940-9166-712f5e1c4767");
+        File file4 = new File("/Users/xujian/Documents/spurpunk-record/Data10/part-e3d38bf9-350d-4a6a-bbe5-76ff6b6b4e16/part-e3d38bf9-350d-4a6a-bbe5-76ff6b6b4e16");
         File file5 = new File("/Users/xujian/Documents/spurpunk-record/data109/part-e45b0b37-0122-4fb1-995a-3b31a96db71f/part-e45b0b37-0122-4fb1-995a-3b31a96db71f");
         File file6 = new File("/Users/xujian/Documents/spurpunk-record/data109/part-ff027790-07b0-4953-8bf7-3d821f60cda5/part-ff027790-07b0-4953-8bf7-3d821f60cda5");
         File file7 = new File("/Users/xujian/Documents/spurpunk-record/Data9/part-5910cce5-8f12-4f20-a675-1ca516335ed0/part-5910cce5-8f12-4f20-a675-1ca516335ed0");
@@ -265,9 +265,9 @@ public class Main {
 //        int[] data_complete = new int[65];
 //        for (Map.Entry<Integer, List<Integer>> entry : level_ratio.entrySet()) {
 //            System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
-//            double ratioTemp = (entry.getValue().get(1) * 1.0) / (entry.getValue().get(0));
-//            BigDecimal bg = new BigDecimal(ratioTemp);
-//            double ratio = bg.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
+////            double ratioTemp = (entry.getValue().get(1) * 1.0) / (entry.getValue().get(0));
+////            BigDecimal bg = new BigDecimal(ratioTemp);
+////            double ratio = bg.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
 ////            System.out.println(ratio);
 //            data_start[entry.getKey()] = entry.getValue().get(0);
 //            data_complete[entry.getKey()] = entry.getValue().get(1);
@@ -369,7 +369,7 @@ public class Main {
 //        frame2.setBounds(50, 50, 800, 600);
 //        frame2.setVisible(true);
 
-//        /****************************** graph 7 graph ***********************************************/
+        /****************************** graph 7 graph ***********************************************/
 //        List<List<String>> tower = new ArrayList<List<String>>();
 //        List<List<Integer>> number = new ArrayList<List<Integer>>();
 //
@@ -528,7 +528,7 @@ class BarChart7 {
     public BarChart7(List<List<String>> data1, List<List<Integer>> data2){
         CategoryDataset dataset = getDataSet(data1, data2);
         JFreeChart chart = ChartFactory.createBarChart3D(
-                "Card Usage Per Level", // 图表标题
+                "Top 5 Card Usage Per Level", // 图表标题
                 "Level", // 目录轴的显示标签
                 "Count", // 数值轴的显示标签
                 dataset, // 数据集
@@ -558,6 +558,16 @@ class BarChart7 {
                 dataset.addValue(data2.get(i).get(j), data1.get(i).get(j) + "     ", i+1 + "  ");
             }
         }
+//        for(int i = 0; i < 30; i++){
+//            for(int j = 0; j < data2.get(i).size(); j++){
+//                dataset.addValue(data2.get(i).get(j), data1.get(i).get(j) + "     ", i+1 + "  ");
+//            }
+//        }
+//        for(int i = 30; i < data1.size(); i++){
+//            for(int j = 0; j < data1.get(i).size(); j++){
+//                dataset.addValue(data2.get(i).get(j), data1.get(i).get(j) + "     ", i+1 + "  ");
+//            }
+//        }
         return dataset;
     }
     public ChartPanel getChartPanel(){
