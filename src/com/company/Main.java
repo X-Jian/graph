@@ -528,7 +528,7 @@ class BarChart7 {
     public BarChart7(List<List<String>> data1, List<List<Integer>> data2){
         CategoryDataset dataset = getDataSet(data1, data2);
         JFreeChart chart = ChartFactory.createBarChart3D(
-                "Top 5 Card Usage Per Level", // 图表标题
+                "Card Usage Per Level top 5", // 图表标题
                 "Level", // 目录轴的显示标签
                 "Count", // 数值轴的显示标签
                 dataset, // 数据集
